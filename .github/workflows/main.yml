@@ -6,11 +6,24 @@ jobs:
   ci:
     runs-on: ubuntu-latest
     steps:
-    - name: Exibir mensagem inicial
-      run: echo "Iniciando o workflow..."
+    - name: Obter codigo fonte
+      uses: actions/checkout@v4.2.2
+    - name: Setup Java JDK
+      uses: actions/setup-java@v3.14.1
+      with:
+        java-version: '11'
+    - name: Rodar codigo
+      uses: actions/setup-java@v3.14.1
+      with:
+        java-version: 11
 
-    - name: Mensagem de build
-      run: echo "Executando etapa de build (simulada)"
+    - name: Build .class
+      working-directory: .
+      run: javac HelloWordl.java
+
+    - name: Rodar class
+      working-directory: .
+      run: java HelloWordl
 
     - name: Mensagem de teste
       run: echo "Executando testes (simulados)"

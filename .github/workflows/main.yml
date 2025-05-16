@@ -1,0 +1,25 @@
+name: Meu Workflow de Teste
+on:
+  push:
+    branches: [ main ]
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Exibir mensagem inicial
+      run: echo "Iniciando o workflow..."
+
+    - name: Mensagem de build
+      run: echo "Executando etapa de build (simulada)"
+
+    - name: Mensagem de teste
+      run: echo "Executando testes (simulados)"
+
+    - name: Finalizando
+      run: echo "Workflow finalizado com sucesso!"
+  cd:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Preparar release
+      run: echo "Preparando release"
+    - run: echo "Executando etapa de build (simulada)"

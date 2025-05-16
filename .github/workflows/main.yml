@@ -17,11 +17,11 @@ jobs:
         
     - name: Build .class
       working-directory: .
-      run: javac HelloWordl.java
+      run: javac HelloWorld.java
 
     - name: Rodar class
       working-directory: .
-      run: java HelloWordl
+      run: java HelloWorld
 
   cd:
     runs-on: ubuntu-latest

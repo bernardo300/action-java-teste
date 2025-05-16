@@ -8,15 +8,12 @@ jobs:
     steps:
     - name: Obter codigo fonte
       uses: actions/checkout@v4.2.2
+      
     - name: Setup Java JDK
       uses: actions/setup-java@v3.14.1
       with:
         java-version: '11'
-    - name: Rodar codigo
-      uses: actions/setup-java@v3.14.1
-      with:
-        java-version: 11
-
+        
     - name: Build .class
       working-directory: .
       run: javac HelloWordl.java
@@ -25,11 +22,6 @@ jobs:
       working-directory: .
       run: java HelloWordl
 
-    - name: Mensagem de teste
-      run: echo "Executando testes (simulados)"
-
-    - name: Finalizando
-      run: echo "Workflow finalizado com sucesso!"
   cd:
     runs-on: ubuntu-latest
     steps:
